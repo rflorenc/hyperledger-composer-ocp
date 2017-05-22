@@ -1,2 +1,2 @@
 # hyperledger-composer-ocp
-Hyperledger Composer on OpenShift Container Platform
+[WIP] Hyperledger Composer on OpenShift Container Platform
