@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: membersrvc
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.composer.service: membersrvc
+    spec:
+      containers:
+      - args:
+        - membersrvc
+        env:
+        - name: MEMBERSRVC_CA_ACA_ENABLED
+          value: "true"
+        image: hyperledger/fabric-membersrvc:x86_64-0.6.1-preview
+        name: membersrvc
+        ports:
+        - containerPort: 7054
+        resources: {}
+      restartPolicy: Always
+status: {}

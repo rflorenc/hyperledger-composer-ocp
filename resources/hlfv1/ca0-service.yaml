@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    io.composer.service: ca0
+  name: ca0
+spec:
+  ports:
+  - name: "7054"
+    port: 7054
+    targetPort: 7054
+  selector:
+    io.composer.service: ca0
+status:
+  loadBalancer: {}

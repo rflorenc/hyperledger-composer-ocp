@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: composer
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.composer.service: composer
+    spec:
+      containers:
+      - env:
+        - name: COMPOSER_CONFIG
+          value: |
+            {
+              "connectionProfiles": {
+                "hlfabric": {
+                  "type": "hlf",
+                  "keyValStore": "/home/composer/.composer-credentials",
+                  "membershipServicesURL": "grpc://membersrvc:7054",
+                  "peerURL": "grpc://vp0:7051",
+                  "eventHubURL": "grpc://vp0:7053",
+                  "deployWaitTime": 300,
+                  "invokeWaitTime": 30
+                }
+              },
+              "credentials": {
+                "hlfabric": {
+                  "admin": "Xurw3yU9zI0l"
+                }
+              }
+            }
+        image: hyperledger/composer-playground
+        name: composer
+        ports:
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+status: {}

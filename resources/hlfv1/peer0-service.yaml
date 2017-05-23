@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    io.composer.service: peer0
+  name: peer0
+spec:
+  ports:
+  - name: "7051"
+    port: 7051
+    targetPort: 7051
+  - name: "7053"
+    port: 7053
+    targetPort: 7053
+  selector:
+    io.composer.service: peer0
+status:
+  loadBalancer: {}
