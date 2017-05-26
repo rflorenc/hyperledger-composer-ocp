@@ -29,15 +29,15 @@ $ oc new-project hlcomposer
 
 
 Both the peer and member service images will require root access.
-Therefore we need to add the deployer service account to the *anyuid* SCC.
+Therefore we need to add the default service account to the *anyuid* SCC.
 ```
-$ oadm policy add-scc-to-user anyuid system:serviceaccount:hlcomposer:deployer
+$ oc adm policy add-scc-to-user anyuid -z default
 ```
 
 
 ```
 $ git clone https://github.com/rflorenc/hyperledger-composer-ocp.git
-$ cd hyperledger-composer-ocp/resources
+$ cd hyperledger-composer-ocp/resources/hlfv0.6/
 
 $ for resource in *.yaml;do oc create -f $resource; done
 
