@@ -66,12 +66,9 @@ spec:
       restartPolicy: Always
       volumes:
       - name: peer1-claim0
-        persistentVolumeClaim:
-          claimName: peer1-claim0
+        emptyDir: {}
       - name: peer1-claim1
-        persistentVolumeClaim:
-          claimName: peer1-claim1
+        emptyDir: {}
       - name: peer1-claim2
-        persistentVolumeClaim:
-          claimName: peer1-claim2
+        emptyDir: {}
 status: {}

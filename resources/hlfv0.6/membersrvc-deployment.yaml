@@ -16,7 +16,7 @@ spec:
         env:
         - name: MEMBERSRVC_CA_ACA_ENABLED
           value: "true"
-        image: hyperledger/fabric-membersrvc:x86_64-0.6.1-preview
+        image: hyperledger/fabric-membersrvc
         name: membersrvc
         ports:
         - containerPort: 7054
