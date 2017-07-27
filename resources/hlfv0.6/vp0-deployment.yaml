@@ -37,7 +37,7 @@ spec:
           value: test_vp0
         - name: CORE_SECURITY_ENROLLSECRET
           value: MwYpmSRjupbT
-        image: hyperledger/fabric-peer
+        image: hyperledger/fabric-peer:x86_64-1.0.0
         name: vp0
         ports:
         - containerPort: 7050

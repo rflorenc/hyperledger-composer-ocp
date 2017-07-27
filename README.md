@@ -35,6 +35,13 @@ $ oc adm policy add-scc-to-user anyuid -z default
 ```
 
 
+One way to verify the deployment through the web console is to give
+the *admin* role to a user. In this case, the user `dev` will be able to access 
+the hlcomposer project. 
+```
+$ oadm policy add-role-to-user admin dev -n hlcomposer
+```
+
 ```
 $ git clone https://github.com/rflorenc/hyperledger-composer-ocp.git
 $ cd hyperledger-composer-ocp/resources/hlfv0.6/
